@@ -105,8 +105,9 @@
 <body>
 
 <header>
- <img src="logo.jpeg" alt="Saturday Sweats Logo"
-     onerror="this.src='https://via.placeholder.com/150?text=Logo';">
+  <img src="logo.png" alt="Saturday Sweats Logo"
+       onerror="this.src='https://via.placeholder.com/150?text=Logo';">
+  <h1>Saturday Sweats</h1>
   <p class="header-subtitle">College Football Picks</p>
 </header>
 
@@ -136,10 +137,11 @@
 </div>
 
 <script>
-  // Update picks date
+  // Display today's date in the picks title
   const today = new Date();
   const options = { month: 'short', day: 'numeric', year: 'numeric' };
-  document.getElementById("todays-picks-title").textContent = `Today's Picks - ${today.toLocaleDateString('en-US', options)}`;
+  document.getElementById("todays-picks-title").textContent =
+    `Today's Picks - ${today.toLocaleDateString('en-US', options)}`;
 
   // Fade in cards
   const cards = document.querySelectorAll('.card');
@@ -150,5 +152,4 @@
 
 </body>
 </html>
-
 
