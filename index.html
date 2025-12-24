@@ -5,30 +5,95 @@
   <title>Saturday Sweats</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* ===== BODY & HEADER ===== */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: 'Arial', sans-serif;
+      background: #0a0a23; /* dark navy to match logo */
+      color: #ffffff;
       text-align: center;
     }
     header {
       padding: 40px 20px;
-      background: #020617;
+      background: linear-gradient(90deg, #1f1f3f, #0a0a23);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
     }
-    h1 { margin: 0; font-size: 2.5rem; }
-    .container { max-width: 800px; margin: auto; padding: 20px; }
-    .card { background: #020617; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-    a { color: #38bdf8; text-decoration: none; font-weight: bold; }
-    .disclaimer { font-size: 0.8rem; opacity: 0.7; margin-top: 30px; }
+    header img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 10px 0 0;
+      font-size: 3rem;
+      color: #ff6700; /* match the orange in the logo */
+      text-shadow: 1px 1px 3px #000;
+    }
+    p.header-subtitle {
+      margin: 5px 0;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* ===== CONTAINER & CARDS ===== */
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .card {
+      background: #11112a; /* darker card background */
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #ff6700; /* accent color */
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    /* ===== PICKS ===== */
+    #todays-picks p {
+      background: #1f1f3f;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    }
+    #todays-picks strong {
+      color: #fdd835; /* golden highlight for picks */
+    }
+
+    /* ===== LINKS ===== */
+    a {
+      color: #00ff99; /* bright green from logo */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===== DISCLAIMER ===== */
+    .disclaimer {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 30px;
+      color: #bbbbbb;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="3900f998-3c74-441d-bd1c-77d018a6659e.png" alt="Saturday Sweats Logo" style="width:150px; height:auto; margin-bottom:10px;">
+  <img src="03b1104c-8ebf-4ca8-8bf5-8c7acc652bae.png" alt="Saturday Sweats Logo">
   <h1>Saturday Sweats</h1>
-  <p>College Football Picks</p>
+  <p class="header-subtitle">College Football Picks</p>
 </header>
 
 <div class="container">
@@ -55,17 +120,18 @@
 </div>
 
 <script>
-  // ====== CONFIGURE PICKS HERE ======
+  // ===== CONFIGURE PICKS =====
   const seasonRecord = "3–1 (+4.0U)";
   const todaysPicks = [
-    { pick: "Ohio +6.5 (1U) 🐾", comment: "UNLV has been very lucky this season expect the Bobcats to cover" },
+    { pick: "Ohio +6.5 (1U) 🐾", comment: "UNLV has been very lucky this season" },
+    { pick: "Louisville -7.5 (1U)", comment: "Strong matchup, expect a win" }
   ];
 
-  // ====== AUTOMATICALLY UPDATE HTML ======
+  // ===== UPDATE HTML =====
   document.getElementById("season-record").textContent = seasonRecord;
 
   const picksContainer = document.getElementById("todays-picks");
-  picksContainer.innerHTML = ""; // clear any old picks
+  picksContainer.innerHTML = "";
 
   todaysPicks.forEach(p => {
     const pEl = document.createElement("p");
