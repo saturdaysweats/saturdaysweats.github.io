@@ -19,7 +19,8 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.6);
     }
     header img {
-      width: 300px; /* increased width */
+      width: 80%;       /* responsive width */
+      max-width: 400px; /* won’t get bigger than 400px */
       height: auto;
       margin-bottom: 10px;
     }
@@ -29,10 +30,16 @@
       color: #ff6700;
       text-shadow: 1px 1px 3px #000;
     }
-    p.header-subtitle {
-      margin: 5px 0;
+
+    /* ===== ABOUT MESSAGE ===== */
+    .about-message {
       color: #ffffff;
-      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     /* ===== CONTAINER & CARDS ===== */
@@ -108,7 +115,9 @@
   <img src="logo.png" alt="Saturday Sweats Logo"
        onerror="this.src='https://via.placeholder.com/150?text=Logo';">
   <h1>Saturday Sweats</h1>
-  <p class="header-subtitle">College Football Picks</p>
+  <p class="about-message">
+    Welcome! I’m a professional college football bettor with years of experience and a deep passion for the game. Over time, I’ve found the most success betting spreads and have developed a cutting-edge model that drives my picks. It incorporates power ratings, strength of schedule, luck metrics, injuries, weather, home-field advantage, and recruiting rankings. Picks are posted daily, hours before kickoff—enjoy! 
+  </p>
 </header>
 
 <div class="container">
@@ -152,3 +161,4 @@
 
 </body>
 </html>
+
