@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: #0a0a23; /* dark navy */
+      background: #0a0a23;
       color: #ffffff;
       text-align: center;
     }
@@ -47,7 +47,13 @@
       border-radius: 15px;
       margin-bottom: 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.2s ease;
+    }
+    .card.show {
+      transform: translateY(0);
+      opacity: 1;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -99,7 +105,7 @@
 <body>
 
 <header>
- <img src="https://via.placeholder.com/150" alt="Logo Test">
+  <img src="logo.jpeg" alt="Saturday Sweats Logo" onerror="this.src='https://via.placeholder.com/150?text=Logo';">
   <h1>Saturday Sweats</h1>
   <p class="header-subtitle">College Football Picks</p>
 </header>
@@ -108,12 +114,14 @@
 
   <div class="card">
     <h2>Season Record</h2>
-    <p id="season-record">0–0 (+0.0U)</p>
+    <p id="season-record">103–55 (+63.89U)</p>
   </div>
 
   <div class="card">
     <h2 id="todays-picks-title">Today's Picks</h2>
-    <div id="todays-picks"></div>
+    <div id="todays-picks">
+      <p>No picks today. Enjoy the holiday! 🎄</p>
+    </div>
   </div>
 
   <div class="card">
@@ -128,27 +136,15 @@
 </div>
 
 <script>
-  // ===== CONFIGURE PICKS =====
-  const seasonRecord = "102–55 (+62.98U)";
-  const todaysPicks = [
-    { pick: "Ohio +6.5 (1U) 🐾", comment: "UNLV has been very lucky this season" }
-  ];
-
-  // ===== UPDATE HTML =====
-  document.getElementById("season-record").textContent = seasonRecord;
-
-  // Display today's date
+  // Update picks date
   const today = new Date();
   const options = { month: 'short', day: 'numeric', year: 'numeric' };
   document.getElementById("todays-picks-title").textContent = `Today's Picks - ${today.toLocaleDateString('en-US', options)}`;
 
-  // Populate picks
-  const picksContainer = document.getElementById("todays-picks");
-  picksContainer.innerHTML = "";
-  todaysPicks.forEach(p => {
-    const pEl = document.createElement("p");
-    pEl.innerHTML = `<strong>${p.pick}</strong><br>${p.comment}`;
-    picksContainer.appendChild(pEl);
+  // Fade in cards
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, i) => {
+    setTimeout(() => card.classList.add('show'), i * 150);
   });
 </script>
 
