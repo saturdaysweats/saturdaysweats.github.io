@@ -1,169 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Saturday Sweats</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0a0a23;
-      color: #ffffff;
-      text-align: center;
+      background: #0f172a;
+      color: #e5e7eb;
     }
 
     header {
-      padding: 40px 20px;
-      background: linear-gradient(90deg, #1f1f3f, #0a0a23);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+      background: #020617;
+      padding: 24px;
+      text-align: center;
+      border-bottom: 2px solid #22c55e;
     }
 
-    header img {
-      width: 80%;
-      max-width: 400px;
-      margin-bottom: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #22c55e;
     }
 
-    h1 {
-      font-size: 3rem;
-      color: #ff6700;
-      margin: 10px 0;
+    header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #94a3b8;
     }
 
-    .about-message {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.5;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .card {
-      background: #11112a;
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.5s ease;
-    }
-
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #ff6700;
-    }
-
-    /* ===== PICKS ===== */
-    .pick {
-      padding: 12px;
+      background: #020617;
       border-radius: 10px;
-      margin-bottom: 10px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #22c55e;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 8px;
+    }
+
+    .record p {
+      font-size: 1.4rem;
       font-weight: bold;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.4);
     }
 
-    .pick.win {
-      background: #0f3d2e;
-      color: #00ff99;
+    .picks p {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #cbd5f5;
     }
 
-    .pick.loss {
-      background: #3d0f0f;
-      color: #ff4d4d;
-    }
-
-    .pick.pending {
-      background: #1f1f3f;
-      color: #fdd835;
-    }
-
-    .pick.push {
-      background: #2b2b2b;
-      color: #cccccc;
-    }
-
-    a {
-      color: #00ff99;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .disclaimer {
-      font-size: 0.8rem;
-      opacity: 0.7;
-      margin-top: 30px;
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.9rem;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" onerror="this.src='https://via.placeholder.com/150?text=Logo';">
-  <h1>Saturday Sweats</h1>
-  <p class="about-message">
-  Welcome! I’m a professional college football bettor with years of experience and a deep passion for the game.
-  Over time, I’ve found the most success betting spreads and have developed a cutting-edge model that drives my picks.
-  It incorporates power ratings, strength of schedule, luck metrics, injuries, weather, home-field advantage,
-  and recruiting rankings. Picks are posted daily, hours before kickoff—enjoy!
-</p>
+  <header>
+    <h1>Saturday Sweats</h1>
+    <p>Elite CFB betting. Data-driven edges. Long-term profit.</p>
+  </header>
 
-  </p>
-</header>
+  <main>
 
-<div class="container">
+    <!-- RECORD SECTION -->
+    <div class="card record">
+      <h2>2025 Record</h2>
+      <p>107–58 (+64.50U)</p>
+    </div>
 
-  <div class="card">
-    <h2>Season Record</h2>
-    <p>105–55 (+66.63U)</p>
-  </div>
+    <!-- PICKS SECTION -->
+    <div class="card picks">
+      <h2>Today’s Picks</h2>
+      <p>No picks today.</p>
+    </div>
 
-  <div class="card">
-    <h2 id="todays-picks-title">My Picks</h2>
+  </main>
 
-    <p class="pick pending">Penn State +2.5 (1U) ⏳</p>
-    <p class="pick pending">BYU -3.5 (1U) ⏳</p>
-    <p class="pick pending">North Texas -6.5 (1U) ⏳</p>
-    <p class="pick pending">Missouri -4 (1U) ⏳</p>
-    <p class="pick pending">LSU +1.5 (2U) ⏳</p>
-
-    <p>
-      Big slate today. High-value, sharp positions.
-      Trust the process. #SaturdaySweats
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Follow Me on X</h2>
-    <p><a href="https://twitter.com/SaturdaySweats" target="_blank">@SaturdaySweats</a></p>
-  </div>
-
-  <p class="disclaimer">
-    For entertainment purposes only. 21+.
-  </p>
-
-</div>
-
-<script>
-  const today = new Date();
-  document.getElementById("todays-picks-title").textContent =
-    `My Picks - ${today.toLocaleDateString('en-US')}`;
-
-  document.querySelectorAll('.card').forEach((card, i) => {
-    setTimeout(() => card.classList.add('show'), i * 150);
-  });
-</script>
+  <footer>
+    © 2025 Saturday Sweats · Bet responsibly
+  </footer>
 
 </body>
 </html>
